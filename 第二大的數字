@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int howMany;
+    cout << "幾個數字?";
+    cin >> howMany;
+    int numbers[howMany];
+    for(int i = 0; i < howMany; i ++){
+        cin >> numbers[i];
+    }
+    int numOne = -100, numTwo = -99;
+    for(int i = 0; i < howMany; i ++){
+        if(numbers[i] > numOne){
+            numOne = numbers[i];
+        }
+    }
+    for(int i = 0; i < howMany; i ++){
+        if((numbers[i] > numTwo) && (numbers[i] < numOne)){
+            numTwo = numbers[i];
+        }
+    }
+    cout << "第二大的數字是:" << numTwo;
+    return 0;
+}
